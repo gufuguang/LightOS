@@ -1,0 +1,8 @@
+1、NASM编译MBR命令
+	nasm -f bin MBR.S -o MBR.bin
+2、用dd命令工具把MBR写到起始扇区
+	dd if=G:\myOS\LightOS\boot\x86\MBR.bin of=\\.\Volume{2eee40d2-bd2f-11ea-bd3e-005056c00008} bs=512 count=1
+	
+说明：
+    内核被loader加载到0x70000处，被解析到1M处，内核的main入口函数在1M+1KB处
+	

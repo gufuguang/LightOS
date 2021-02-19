@@ -55,7 +55,7 @@ static void pic_8259A_init(void)
     out8(PIC_S_DATA, 0x02);     // ICW3 连接主片8259A IRQ2
     out8(PIC_S_DATA, 0x01);     // ICW4 EOI
 
-    out8(PIC_M_DATA, 0xfd);     // 打开主片IRQ0，接收时钟中断
+    out8(PIC_M_DATA, 0xfc);     // 打开主片IRQ0，接收时钟中断
     out8(PIC_S_DATA, 0xff);     // 暂时不打开从片中断
 
     put_str(IDT_MOD_NAME"8259A init done\n");

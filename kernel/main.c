@@ -12,6 +12,7 @@ static int app_var = 0;
 int main(int mem_size, char** argv) 
 {
     asm volatile("cli" : : :"memory");      // 关中断
+    put_int((int)argv);
     put_char('\n');
     put_str("\nwelcome to C world, computer mem size 0x");
     put_int(mem_size);
@@ -34,6 +35,7 @@ int main(int mem_size, char** argv)
     {
         put_str("idle thread\n");
     }
+    while(1);
 
     return 0;
 }
